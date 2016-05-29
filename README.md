@@ -1,3 +1,6 @@
+## FirstProject ##
+To demostrate how to use this to work together
+
 ## Welcome to MarkdownPad 2 ##
 
 **MarkdownPad** is a full-featured Markdown editor for Windows.
@@ -28,9 +31,6 @@ MarkdownPad supports multiple Markdown processing engines, including standard Ma
 
 With a tabbed document interface, PDF export, a built-in image uploader, session management, spell check, auto-save, syntax highlighting and a built-in CSS management interface, there's no limit to what you can do with MarkdownPad.
 
-
-# FirstProject
-To demostrate how to use this to work together
 
 
 #2016-05-29
