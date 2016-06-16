@@ -8,8 +8,7 @@ public class Logic operation {
         System.out.println((a丨丨)b+"通过"）;
         System.out.println((!a)+"未通过”）;
         System.out.println((a^b)+"通过"）;
-        System.out.println((a&&d)+"通过"）;
-    
+        System.out.println((a&&d)+"通过");
     
     
 	}
