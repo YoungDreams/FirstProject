@@ -1,4 +1,4 @@
-public class Logic operation {
+public class Logic operation{
     public static void main(String[] args) {
 		boolean a = true; // a同意
 		boolean b = false; // b反对
