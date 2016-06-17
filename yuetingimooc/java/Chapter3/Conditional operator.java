@@ -26,5 +26,6 @@ public class Conditional operator{
         System.out.println("考试成绩如何："+mark6);
         System.out.println("考试成绩如何："+mark7);
         System.out.println("考试成绩如何："+mark8);
+
 	}
 }       
