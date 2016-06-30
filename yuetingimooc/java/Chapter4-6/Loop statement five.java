@@ -18,4 +18,4 @@ public class Loop statement five{
 	}
 }
 }
-          //备注：为什么两种输出结果不同。
+          //备注：为什么两种输出结果不同
