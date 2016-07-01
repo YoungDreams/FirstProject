@@ -12,10 +12,10 @@ public class Loop statement three {
         sum=sum+i;
        } 
     }
-    System.out.println("1µ½100Ö®¼ä²»ÄÜ±»3Õû³ıµÄÊıÖ®ºÍÎª£º" + sum);
+    System.out.println("1åˆ°100ä¹‹é—´ä¸èƒ½è¢«3æ•´é™¤çš„æ•°ä¹‹å’Œä¸ºï¼š" + sum);
     int i =0;
     for(;i<10;i++) {
-    System.out.println("ÀîÕñ£¬×£¸£ÄãºÍ¾Õ»¨°ÙÄêºÃºÏ"); }
+    System.out.println("ä¹æŒºèŠèŠ±ï¼Œç¥ç™¾å¹´å¥½åˆ!"); }
     }
 
 	}
