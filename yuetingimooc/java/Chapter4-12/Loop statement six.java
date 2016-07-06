@@ -21,3 +21,4 @@ public class Loop statement six {
 
 	}
 }
+             //备注：continue和break两种的用法一般体现在什么地方。
