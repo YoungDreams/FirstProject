@@ -4,7 +4,7 @@ public class Loop statement five{
 		for (int i = 1; i <= 10; i++) {
 		sum = sum + i;
         if (sum>20) {
-		System.out.println("µ±Ç°µÄÀÛ¼ÓÖµÎª:" + sum);
+		System.out.println("å½“å‰çš„ç´¯åŠ å€¼ä¸º:" + sum);
 		      break;
 			}
 		}
@@ -12,10 +12,10 @@ public class Loop statement five{
         for (int i = 1; i <= 10; i++) {
 		num = num + i;
 		if ((num=num+i)>20) {	
-		System.out.println("µ±Ç°µÄÀÛ¼ÓÖµÎª:" +num);
+		System.out.println("å½“å‰çš„ç´¯åŠ å€¼ä¸º:" +num);
 		      break; 
 		 }
 	}
 }
 }
-          //±¸×¢£ºÎªÊ²Ã´Á½ÖÖÊä³ö½á¹û²»Í¬
+          //å¤‡æ³¨ï¼šä¸ºä»€ä¹ˆä¸¤ç§è¾“å‡ºç»“æœä¸åŒ
