@@ -12,7 +12,7 @@ namespace _1_StartFromSimpleDataType
         static void Main(string[] args)
         {
             ArrayList products = Product.GetSampleProducts();
-            //products.Sort(new ProductNameComparer());
+            products.Sort(new ProductNameComparer());
             foreach (Product product in products)
             {
                 if (product.Price > 10m)
