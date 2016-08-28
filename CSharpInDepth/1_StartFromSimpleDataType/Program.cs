@@ -37,7 +37,6 @@ namespace _1_StartFromSimpleDataType
             List<Product2> matches = product2s.FindAll(test);
             Action<Product2> print = Console.WriteLine;
             matches.ForEach(print);
-
             Console.WriteLine("***C#2***");
             Console.WriteLine();
 
