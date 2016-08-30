@@ -25,7 +25,7 @@ namespace _1_StartFromSimpleDataType
             }
             Console.WriteLine("***C#1***");
             Console.WriteLine();
-
+            
             List<Product2> product2s = Product2.GetSampleProducts();
             product2s.Sort(delegate(Product2 x, Product2 y)
             {
