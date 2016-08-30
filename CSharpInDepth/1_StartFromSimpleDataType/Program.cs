@@ -5,8 +5,8 @@ using System.Linq;
 using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
-using IronPython.Hosting;
-using Microsoft.Scripting.Hosting;
+//using IronPython.Hosting;
+//using Microsoft.Scripting.Hosting;
 
 namespace _1_StartFromSimpleDataType
 {
@@ -57,7 +57,7 @@ namespace _1_StartFromSimpleDataType
                 Console.WriteLine("Supplier={0}; Product={1}", v.SupplierName, v.ProductName);
             }
             Console.WriteLine("***Linq***");
-            foreach (var product3 in product3s.OrderBy(p => p.Name))
+            foreach (var product3 in product3s.OrderByDescending(p => p.Date))
             {
                 Console.WriteLine(product3);
             }
@@ -69,13 +69,14 @@ namespace _1_StartFromSimpleDataType
             Console.WriteLine("***C#3***");
             Console.WriteLine();
 
-            ScriptEngine engine = Python.CreateEngine();
-            ScriptScope scope = engine.ExecuteFile("FindProducts.py");
-            dynamic ps = scope.GetVariable("products");
-            foreach (var p in ps)
-            {
-                Console.WriteLine("{0}, {1}", p.ProductName, p.Price);
-            }
+            //ScriptEngine engine = Python.CreateEngine();
+            //ScriptScope scope = engine.ExecuteFile("FindProducts.py");
+            //dynamic ps = scope.GetVariable("products");
+            //foreach (var p in ps)
+            //{
+            //    Console.WriteLine("{0}, {1}", p.ProductName, p.Price);
+            //}
+            
 
             Console.ReadKey();
         }
