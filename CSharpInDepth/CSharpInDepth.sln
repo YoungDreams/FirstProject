@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_StartFromSimpleDataType",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_CSharp1CoreBase", "2_CSharp1CoreBase\2_CSharp1CoreBase.csproj", "{DFC7E975-049A-4069-8A84-F461BE523CC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_GenericParameterizedType", "3_GenericParameterizedType\3_GenericParameterizedType.csproj", "{81ACBE68-E26D-4659-B4D9-F7BF91A9515C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DFC7E975-049A-4069-8A84-F461BE523CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC7E975-049A-4069-8A84-F461BE523CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFC7E975-049A-4069-8A84-F461BE523CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81ACBE68-E26D-4659-B4D9-F7BF91A9515C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81ACBE68-E26D-4659-B4D9-F7BF91A9515C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81ACBE68-E26D-4659-B4D9-F7BF91A9515C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81ACBE68-E26D-4659-B4D9-F7BF91A9515C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

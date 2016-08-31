@@ -73,7 +73,9 @@ namespace _2_CSharp1CoreBase
             }
             int z = a ?? 10;
             Console.WriteLine(z.ToString());
-            
+
+            Console.WriteLine(DateTime.Today.ToShortDateString());
+
             Console.ReadKey();
         }
 
