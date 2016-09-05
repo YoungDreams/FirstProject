@@ -1,4 +1,6 @@
 ﻿using System;
+using System.CodeDom;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +11,7 @@ namespace _3_GenericParameterizedType
 {
     class Program
     {
+        // C#2:解决C#1的问题
         static void Main(string[] args)
         {
             string text = @"Do you like green eggs and ham?I do not like them, Sam-I-am.I do not like green eggs and ham.";
@@ -71,7 +74,29 @@ namespace _3_GenericParameterizedType
             Console.WriteLine(intro1 == intro2);
             Console.WriteLine(AreReferencesEqual(intro1, intro2));                                                                                                                                                                                                                                              
 
-            
+            Pair<int, string> pair1 = new Pair<int, string>(10, "value");
+            Pair<int, string> pair2 = Pair<int, string>.Of(10, "value");
+
+            Console.WriteLine("***证明不同的封闭类型具有不同的静态字段***");
+
+            TypeWithField<int>.field = "First";
+            TypeWithField<string>.field = "Second";
+            TypeWithField<DateTime>.field = "Third";
+
+            TypeWithField<int>.PrintField();
+            TypeWithField<string>.PrintField();
+            TypeWithField<DateTime>.PrintField();
+
+            Console.WriteLine("***C#1:一个完整的泛型枚举--从0枚举到9***");
+            CountingEnumerable counter = new CountingEnumerable();
+            foreach (var x in counter)//1.首先调用MoveNext方法。 2.获取Current的值。
+            {
+                Console.WriteLine(x);
+            }
+
+            Console.WriteLine("***对类型参数使用typeof操作符***");
+            DemonstrateTypeof<int>();
+
             Console.ReadKey();
         }
 
@@ -138,6 +163,21 @@ namespace _3_GenericParameterizedType
         {
             //比较引用
             return first == second;
+        }
+
+        static void DemonstrateTypeof<X>()
+        {
+            //显示方法的类型参数
+            Console.WriteLine(typeof(X));
+            //显示泛型类型
+            Console.WriteLine(typeof(List<>));
+            Console.WriteLine(typeof(Dictionary<,>));
+            //显示封闭类型，尽管使用了类型参数
+            Console.WriteLine(typeof(List<X>));
+            Console.WriteLine(typeof(Dictionary<string,X>));
+            //显式封闭类型
+            Console.WriteLine(typeof(List<long>));
+            Console.WriteLine(typeof(Dictionary<long,Guid>));
         }
     }
 }

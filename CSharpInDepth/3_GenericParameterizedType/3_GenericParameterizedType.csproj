@@ -44,8 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountingEnumerable.cs" />
+    <Compile Include="Outer.cs" />
+    <Compile Include="Pair.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeWithField.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
