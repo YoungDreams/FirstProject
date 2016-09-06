@@ -3,6 +3,7 @@ using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,6 +13,16 @@ namespace _3_GenericParameterizedType
     class Program
     {
         // C#2:解决C#1的问题
+
+        /*
+         * 理解泛型类型和方法
+         * 泛型方法的类型推断
+         * 类型约束
+         * 反射和泛型
+         * CLR行为
+         * 泛型的限制
+         * 与其他语言对比
+            */
         static void Main(string[] args)
         {
             string text = @"Do you like green eggs and ham?I do not like them, Sam-I-am.I do not like green eggs and ham.";
@@ -97,6 +108,34 @@ namespace _3_GenericParameterizedType
             Console.WriteLine("***对类型参数使用typeof操作符***");
             DemonstrateTypeof<int>();
 
+            Console.WriteLine("***获取泛型和已构造Type对象的各种方式***");
+            string listTypeName = "System.Collections.Generic.List`1";
+            Type defByName = Type.GetType(listTypeName);
+
+            Type closedByName = Type.GetType(listTypeName + "[System.String]");
+            Type closedByMethod = defByName.MakeGenericType(typeof(string));
+            Type closedByTypeof = typeof(List<string>);
+
+            Console.WriteLine(closedByMethod == closedByName);
+            Console.WriteLine(closedByName == closedByTypeof);
+
+            Type defByTypeof = typeof(List<>);
+            Type defByMethod = closedByName.GetGenericTypeDefinition();
+
+            Console.WriteLine(defByMethod == defByName);
+            Console.WriteLine(defByName == defByTypeof);
+
+            Console.WriteLine("***通过反射来获取和调用泛型方法***");
+            Type type = typeof(Snippet);
+            MethodInfo definition = type.GetMethod("PrintTypeParameter");
+            MethodInfo constructed = definition.MakeGenericMethod(typeof(string));
+            constructed.Invoke(null, null);
+
+            Console.WriteLine("***泛型可变性的缺乏***");
+            //Animal[] animals = new Cat[5];//编译通过，但会在运行时出现写入错误
+            //animals[0] = new Turtle();//“System.ArrayTypeMismatchException”类型的未经处理的异常在 3_GenericParameterizedType.exe 中发生 
+            //List<Animal> animals = new List<Cat>();//编译不通过
+
             Console.ReadKey();
         }
 
@@ -179,5 +218,19 @@ namespace _3_GenericParameterizedType
             Console.WriteLine(typeof(List<long>));
             Console.WriteLine(typeof(Dictionary<long,Guid>));
         }
+
+        
     }
+
+    internal class Snippet
+    {
+        public static void PrintTypeParameter<T>()
+        {
+            Console.WriteLine(typeof(T));
+        }
+    }
+
+    class Animal { }
+    class Cat : Animal { }
+    class Turtle : Animal { }
 }
