@@ -233,4 +233,32 @@ namespace _3_GenericParameterizedType
     class Animal { }
     class Cat : Animal { }
     class Turtle : Animal { }
+
+
+    /// <summary>
+    /// 使用泛型辅助类解决逆变性缺乏问题
+    /// </summary>
+    /// <typeparam name="TBase"></typeparam>
+    /// <typeparam name="TDerived"></typeparam>
+    class ComparisonHelper<TBase, TDerived> : IComparer<TDerived> where TDerived : TBase //恰当地约束类型参数
+    {
+        //保存原始的比较器
+        private readonly IComparer<TBase> comparer;
+
+        public ComparisonHelper(IComparer<TBase> comparer)
+        {
+            this.comparer = comparer;
+        }
+        
+        /// <summary>
+        /// 使用隐式类型转换来调用比较器
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public int Compare(TDerived x, TDerived y)
+        {
+            return comparer.Compare(x, y);
+        }
+    }
 }
